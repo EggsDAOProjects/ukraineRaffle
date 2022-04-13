@@ -7,7 +7,10 @@ def pick_winner(tickets, winners=1):
     all_winners = []
 
     for i in range(winners):
-        all_winners.append(random.choice(tickets))
+        indices = range(len(tickets))
+        winning_index = random.choice(indices)
+        all_winners.append(tickets[winning_index])
+        tickets.pop(winning_index)
 
     return all_winners
 
